@@ -73,13 +73,13 @@ Voici la liste de types de fichiers qui peuvent être intéressants à téléver
 
 - .svg
 
-## Autres
+## Langage de balisage
 
-- .csv
+- .html, .htm
 
 - .xml
 
-- .avi, .
+- xhtml
 
 ## Annexes
 
