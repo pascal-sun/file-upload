@@ -1,0 +1,21 @@
+<!--#config timefmt="%A, %d %B %Y, %H:%M:%S"-->
+
+Server Name :
+<pre><!--#echo var="SERVER_NAME" --></pre>
+Server Software :
+<pre><!--#echo var="SERVER_SOFTWARE" --></pre>
+Server Adress :
+<pre><!--#echo var="SERVER_ADDR" --></pre>
+Server Port :
+<pre><!--#echo var="SERVER_PORT" --></pre>
+Date Local :
+<pre><!--#echo var="DATE_LOCAL" --></pre>
+Date GMT :
+<pre><!--#echo var="DATE_GMT" --></pre>
+
+Document Name :
+<pre><!--#echo var="DOCUMENT_NAME" --></pre>
+Document URI :
+<pre><!--#echo var="DOCUMENT_URI" --></pre>
+Last Modified :
+<pre><!--#echo var="LAST_MODIFIED" --></pre>
