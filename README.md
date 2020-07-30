@@ -81,6 +81,21 @@ Voici la liste de types de fichiers qui peuvent être intéressants à téléver
 
 - xhtml
 
+## Todo
+
+Firstly, it uses a path provided by the user. This path is not 
+validated, therefore, it would allow the user to upload the file to any 
+path on the hosting server.
+
+Secondly, it does not restrict the type of the file being uploaded, 
+therefore, it would allow the user to upload a malicious file to gain 
+access to the server.
+
+Finally, it does not restrict the size of the file. This would allow 
+to easily exhaust the host resources and consequently produce a DoS.
+
+- [virtualabs.fr - Bulletproof JPEGs](https://virtualabs.fr/Nasty-bulletproof-Jpegs-l.html), pour PHP avec LFI
+
 ## Annexes
 
 - Unrestricted File Upload | OWASP : https://owasp.org/www-community/vulnerabilities/Unrestricted_File_Upload
