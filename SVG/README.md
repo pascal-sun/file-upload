@@ -17,7 +17,7 @@
 </svg>
 ```
 
-<img title="" src="/home/sun/Documents/PFE/SVG/XSS/xss.svg">
+<img title="" src="XSS/xss.svg">
 
 Des payloads peuvent être donc facilement être injecté dans le fichier SVG.
 
