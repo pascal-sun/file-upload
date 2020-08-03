@@ -30,56 +30,63 @@ Le README.md présente les différents attaques et payloads. Des scripts peuvent
 
 ## Liste de types de fichiers
 
-Voici la liste de types de fichiers qui peuvent être intéressants à téléverser sur une application.
+Voici la liste de types de fichiers qui peuvent être intéressants à téléverser sur une application. La plupart des applications permettant un téléversement de fichiers disposent généralement d'une forme de protection, telle qu'une allowlist / blocklist de fichiers autorisées ou non. Bien que les allowlist soient la méthode la plus sûre pour protéger les téléversements de fichiers, de nombreux applications utilisent les blocklist. Il est donc utile d'essayer les extensions de fichiers les moins utilisées.
 
 ### Programmation
 
-- PHP : `.php`, `.php3`, `.php4`, `.php5`, `.php7`, `.phar`, `.phps`, `.phpt`, `.pht`, `.phtm`, `.phtml`
-- ASP : `.asp`, `.aspx`, `.cer`, `.asa`, `.aspx`, `.cshtml`, `.vbhtml`
-- Python : `.py`
-- Perl : `.pl`, `.pm`, `.cgi`, `.lib`
-- Ruby : `.rb`
-- Shell : `.sh`
-- Java : `.jsp`, `.jspx`, `.jsw`, `.jsv`, `.jspf`
-- Coldfusion : `.cfm`, `.cfml`, `.cfc`, `.dbm`
+| Type       | Extension                                                                                                      | Risque                                                |
+| ---------- | -------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------- |
+| PHP        | `.php`, `.php3`, `.php4`, `.php5`, `.php7`, `.phar`, `.phps`, `.phpt`, `.pht`, `.phtm`, `.phtml`               | **RCE** via webshell, **Information Disclosure**      |
+| ASP        | `.asp`, `.aspx`, `.cer`, `.asa`, `.aspx`, `.cshtml`, `.vbhtml`                                                 | **RCE** via webshell                                  |
+| SSI        | `.shtml`, `.stm`, `.shtm`                                                                                      | **RCE** via SSI Injection, **Information Disclosure** |
+| Python     | `.py`                                                                                                          | **RCE** via webshell                                  |
+| Perl       | `.pl`, `.pm`, `.cgi`, `.lib` (note, `.pm` and `.lib` cannot be called directly, but rather invoked as modules) | **RCE** via webshell                                  |
+| Ruby       | `.rb`                                                                                                          | **RCE** via webshell                                  |
+| Shell      | `.sh`                                                                                                          | **RCE** via webshell                                  |
+| Java       | `.jsp`, `.jspx`, `.jsw`, `.jsv`, `.jspf`                                                                       | **RCE** via webshell                                  |
+| Coldfusion | `.cfm`, `.cfml`, `.cfc`, `.dbm` (if IIS is configured right)                                                   | **RCE** via webshell                                  |
 
 ### Configuration
 
-- Apache : `.htaccess`
-
-- IIS : `web.config`
-
-- `.httpd.conf`
-
-- Python : `__init__.py`
+| Type   | Extension                 | Risque |
+| ------ | ------------------------- | ------ |
+| Apache | `.htaccess`, `httpd.conf` |        |
+| IIS    | `web.config`              |        |
+| Python | `__init__.py`             |        |
 
 ## Archivage
 
-- .zip
-
-- .tar
-
-- .rar
-
-- .7z
+| Type | Extension | Risque                                          |
+| ---- | --------- | ----------------------------------------------- |
+| Zip  | `.zip`    | Information Disclosure via Symlink, RCE via LFI |
+| RAR  | `.rar`    |                                                 |
+| tar  | `.tar`    |                                                 |
+| 7z   | `7z`      |                                                 |
 
 ## Images
 
-- .jpeg
-
-- .png
-
-- .gif
-
-- .svg
+| Type | Extension       | Risque                                 |
+| ---- | --------------- | -------------------------------------- |
+| JPEG | `.jpg`, `.jpeg` |                                        |
+| PNG  | `.png`          |                                        |
+| GIF  | `.gif`          |                                        |
+| SVG  | `.svg`          | XXS, XXE, HTML Injection Open Redirect |
 
 ## Langage de balisage
 
-- .html, .htm
+| Type  | Extension       | Risque                             |
+| ----- | --------------- | ---------------------------------- |
+| HTML  | `.html`, `.htm` | HTML Injection, XSS, Open Redirect |
+| XML   | `.xml`          | XXE, XXS                           |
+| XHTML | `.xhtml`        |                                    |
 
-- .xml
+### Autres
 
-- xhtml
+| Type  | Extension      | Risque                 |
+| ----- | -------------- | ---------------------- |
+| EICAR | `.com`, `.zip` | Propagation de malware |
+|       |                |                        |
+|       |                |                        |
 
 ## Todo
 

