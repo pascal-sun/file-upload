@@ -22,9 +22,9 @@ Le fichier de test **eicar.com** est un fichier exécutable en `.com` avec la ch
 X5O!P%@AP[4\PZX54(P^)7CC)7}$EICAR-STANDARD-ANTIVIRUS-TEST-FILE!$H+H*
 ```
 
-**eicar\_com.zip** est un archive zip contenant le fichier de test : un bon antivirus détectera ce fichier même dans une archive.
+**eicar_com.zip** est un archive `.zip` contenant le fichier de test Eicar. Un bon logiciel d'antivirus devra détecter le "virus", même à l'intérieur d'une archive.
 
-Et **eicarcom2.zip** est un archive zip qui contient l'archive du fichier de test : cela peut-être utilisé pour voir si le logiciel antivirus vérifie les archives sur plusieurs niveau de profondeur.
+Et **eicarcom2.zip** est un archive `.zip` contenant l'archive du fichier de test Eicar. Ce fichier peut être uploadé pour voir si le logiciel d'antivirus vérifie les archives sur plusieurs niveaux de profondeur.
 
 ## References
 

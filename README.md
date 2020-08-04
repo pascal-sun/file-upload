@@ -1,5 +1,9 @@
 # Catalogue de fichiers pour File Upload
 
+De nombreux applications permettent le téléversement/téléchargement de données/informations. Mais l'acceptation de fichiers peut présenter des risques. Pour réduire ce risque, nous pouvons n'accepter que certaines extensions de fichiers, mais les attaquants sont capables d'encapsuler un code malveillant dans des types de fichiers neutres d'apparences.
+
+Les tests de détection des fichiers malveillant vérifient que l'application est capable de protéger correctement contre les attaquants qui téléversent des fichiers malveillants.
+
 La fonctionnalité de **File Upload** peut représenter un risque pour une application si elle n'est pas implémentée correctement. 
 
 Selon ce que fait l'application du fichier, les conséquences d'un téléversement de fichiers non sûrs sont nombreuses :
@@ -102,6 +106,8 @@ Finally, it does not restrict the size of the file. This would allow
 to easily exhaust the host resources and consequently produce a DoS.
 
 - [virtualabs.fr - Bulletproof JPEGs](https://virtualabs.fr/Nasty-bulletproof-Jpegs-l.html), pour PHP avec LFI
+- Gén;erer des payloads avec metasploit
+- `.cert` ?
 
 ## Annexes
 
@@ -116,3 +122,7 @@ to easily exhaust the host resources and consequently produce a DoS.
 - https://book.hacktricks.xyz/pentesting-web/file-upload
 
 - [File Upload XSS - Brute XSS](https://brutelogic.com.br/blog/file-upload-xss/)
+
+- [GitHub - fuzzdb-project/fuzzdb: Dictionary of attack patterns and primitives for black-box application fault injection and resource discovery.](https://github.com/fuzzdb-project/fuzzdb)
+
+- [GitHub - danielmiessler/SecLists: SecLists is the security tester&#39;s companion. It&#39;s a collection of multiple types of lists used during security assessments, collected in one place. List types include usernames, passwords, URLs, sensitive data patterns, fuzzing payloads, web shells, and many more.](https://github.com/danielmiessler/SecLists)

