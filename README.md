@@ -126,3 +126,5 @@ to easily exhaust the host resources and consequently produce a DoS.
 - [GitHub - fuzzdb-project/fuzzdb: Dictionary of attack patterns and primitives for black-box application fault injection and resource discovery.](https://github.com/fuzzdb-project/fuzzdb)
 
 - [GitHub - danielmiessler/SecLists: SecLists is the security tester&#39;s companion. It&#39;s a collection of multiple types of lists used during security assessments, collected in one place. List types include usernames, passwords, URLs, sensitive data patterns, fuzzing payloads, web shells, and many more.](https://github.com/danielmiessler/SecLists)
+
+https://cwe.mitre.org/data/definitions/434.html

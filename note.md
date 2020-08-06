@@ -1,5 +1,7 @@
 # Téléchargement non restreint de fichier
 
+If you can **indicate the web server to catch an image from a URL** you could try to abuse a [SSRF](/pentesting-web/ssrf-server-side-request-forgery). If this **image** is going to be **saved** in some **public** site, you could also indicate a URL from [Generate Invisible IPLogger Image | IP Logger](https://iplogger.org/invisible/) and **steal information of every visitor**.
+
 Unrestricted File Upload
 
 ## PHP
