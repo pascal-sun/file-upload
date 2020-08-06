@@ -184,11 +184,15 @@ https://www.dynamicciso.com/web-shells-in-php-detection-and-prevention-part-1/
 ## Todo
 
 - Vérifier les fonctions définies en PHP
+
 - Faire un webshell avec proc\_open, pcntl\_exec ou eval(), preg\_match() avec le flag /e, show\_source, asser() (
   
   ```
   <?php @CENSORED($_POST['password']);?>)
   ```
+
 - Ajouter les différents payloads avec les diférents extentsions de PHP
+
 - Vérifier qu'un paramètre est présent
+
 - 

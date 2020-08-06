@@ -1,6 +1,6 @@
 # HTML
 
-![](logo_html5.png)
+<img src="logo_html5.png" title="" alt="" height="200">
 
 **Facteur de risque** : XSS, HTML Injection
 

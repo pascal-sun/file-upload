@@ -73,3 +73,9 @@ Comme l'exploitation se passe au moment du téléversement, l'utilisateur peut n
   - https://imagetragick.com
 
 ## Todo
+
+- [Remote Code Execution in the Avatars - Dodd Security](https://doddsecurity.com/94/remote-code-execution-in-the-avatars/)
+
+- Beating getimagesize() : [Unrestricted File Upload | OWASP](https://owasp.org/www-community/vulnerabilities/Unrestricted_File_Upload)
+
+- Upload .gif file to be resized - image library flaw exploited

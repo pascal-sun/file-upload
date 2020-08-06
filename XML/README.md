@@ -117,3 +117,9 @@ Le payload peut être modifié facilement en changeant la balise `<something>`:
   - [PayloadsAllTheThings/XSS Injection at master · swisskyrepo/PayloadsAllTheThings · GitHub](https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/XSS%20Injection#xss-in-files)
 
 ## Todo
+
+- Uploading a “crossdomain.xml” or “clientaccesspolicy.xml” file can
+  make a website vulnerable to cross-site content hijacking. These
+  files should be uploaded to the root of the website to work.
+  However, the “crossdomain.xml” file can be in a subdirectory as long
+  as it is allowed in the root “crossdomain.xml” file.
