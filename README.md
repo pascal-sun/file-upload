@@ -108,6 +108,9 @@ to easily exhaust the host resources and consequently produce a DoS.
 - [virtualabs.fr - Bulletproof JPEGs](https://virtualabs.fr/Nasty-bulletproof-Jpegs-l.html), pour PHP avec LFI
 - Gén;erer des payloads avec metasploit
 - `.cert` ?
+- Cross-site content hijacking issues can be exploited by uploading a
+  file with allowed name and extension but with Flash, PDF, or
+  Silverlight contents.
 
 ## Annexes
 
@@ -126,5 +129,11 @@ to easily exhaust the host resources and consequently produce a DoS.
 - [GitHub - fuzzdb-project/fuzzdb: Dictionary of attack patterns and primitives for black-box application fault injection and resource discovery.](https://github.com/fuzzdb-project/fuzzdb)
 
 - [GitHub - danielmiessler/SecLists: SecLists is the security tester&#39;s companion. It&#39;s a collection of multiple types of lists used during security assessments, collected in one place. List types include usernames, passwords, URLs, sensitive data patterns, fuzzing payloads, web shells, and many more.](https://github.com/danielmiessler/SecLists)
+
+- [GitHub - modzero/mod0BurpUploadScanner: HTTP file upload scanner for Burp Proxy](https://github.com/modzero/mod0BurpUploadScanner)
+
+- [GitHub - almandin/fuxploider: File upload vulnerability scanner and exploitation tool.](https://github.com/almandin/fuxploider)
+
+- [GitHub - wireghoul/htshells: Self contained htaccess shells and attacks](https://github.com/wireghoul/htshells)
 
 https://cwe.mitre.org/data/definitions/434.html

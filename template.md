@@ -2,9 +2,9 @@
 
 **Facteur de risque** : Information Disclosure, LFI, XXE, XSS...
 
-**Extension** : .zip
+**Extension** : `.zip`
 
-**Type MIME** : application/zip
+**Type MIME** : `application/zip`
 
 **Description** : Description de l'extension du fichier
 
