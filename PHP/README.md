@@ -1,6 +1,6 @@
 # PHP
 
-![](logo.png)
+<img src="logo.png" title="" alt="" height="150">
 
 **Facteur de risque** : RCE via webshell, Information DIsclosure
 

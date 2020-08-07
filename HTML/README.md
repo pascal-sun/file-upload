@@ -1,8 +1,8 @@
 # HTML
 
-<img src="logo_html5.png" title="" alt="" height="200">
+<img src="logo_html5.png" title="" alt="" height="150">
 
-**Facteur de risque** : XSS, HTML Injection
+**Facteur de risque** : XSS, HTML Injection, Open Redirection
 
 **Extension** : `.html`, `.htm`
 
@@ -72,7 +72,7 @@ Un exemple pour le phishing :
 </html>
 ```
 
-## Open Redirect
+## Open Redirection
 
 ### Pré-requis
 

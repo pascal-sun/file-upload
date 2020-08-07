@@ -1,6 +1,6 @@
 # SVG
 
-<img src="logo_svg.png" title="" alt="" height="200">
+<img src="logo_svg.png" title="" alt="" height="150">
 
 **Facteur de risque** : XSS, XXE, HTML Injection, ,OpenRedirect, SSRF, DoS
 
@@ -174,7 +174,7 @@ Pour exécuter une commande (ici `ls`) à l'aide de wrapper de PHP `expect`:
 </svg>
 ```
 
-## OpenRedirect
+## OpenRedirection
 
 ### Pré-requis
 
@@ -182,7 +182,7 @@ Pour exécuter une commande (ici `ls`) à l'aide de wrapper de PHP `expect`:
 
 ### Attaque
 
-Comme une XSS injection est possible avec les fichier SVG, une Open Redirect l'est également. Le code suivant permet une redirection sur google.com :
+Comme une XSS injection est possible avec les fichier SVG, une Open Redirection l'est également. Le code suivant permet une redirection sur google.com :
 
 ```svg
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>

@@ -62,6 +62,8 @@ Bla
 
 ## Todo
 
+- an Excel file with a dangerous formula
+
 ## XXE inside DOCX file
 
 Format of an Open XML file (inject the payload in any .xml file):

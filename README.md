@@ -38,17 +38,17 @@ Voici la liste de types de fichiers qui peuvent être intéressants à téléver
 
 ### Programmation
 
-| Type       | Extension                                                                                                      | Risque                                                |
-| ---------- | -------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------- |
-| PHP        | `.php`, `.php3`, `.php4`, `.php5`, `.php7`, `.phar`, `.phps`, `.phpt`, `.pht`, `.phtm`, `.phtml`               | **RCE** via webshell, **Information Disclosure**      |
-| ASP        | `.asp`, `.aspx`, `.cer`, `.asa`, `.aspx`, `.cshtml`, `.vbhtml`                                                 | **RCE** via webshell                                  |
-| SSI        | `.shtml`, `.stm`, `.shtm`                                                                                      | **RCE** via SSI Injection, **Information Disclosure** |
-| Python     | `.py`                                                                                                          | **RCE** via webshell                                  |
-| Perl       | `.pl`, `.pm`, `.cgi`, `.lib` (note, `.pm` and `.lib` cannot be called directly, but rather invoked as modules) | **RCE** via webshell                                  |
-| Ruby       | `.rb`                                                                                                          | **RCE** via webshell                                  |
-| Shell      | `.sh`                                                                                                          | **RCE** via webshell                                  |
-| Java       | `.jsp`, `.jspx`, `.jsw`, `.jsv`, `.jspf`                                                                       | **RCE** via webshell                                  |
-| Coldfusion | `.cfm`, `.cfml`, `.cfc`, `.dbm` (if IIS is configured right)                                                   | **RCE** via webshell                                  |
+| Type       | Extension                                                                                                      | Risque                                                    |
+| ---------- | -------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------- |
+| PHP        | `.php`, `.php3`, `.php4`, `.php5`, `.php7`, `.phar`, `.phps`, `.phpt`, `.pht`, `.phtm`, `.phtml`               | **RCE** via webshell, **Information Disclosure**          |
+| ASP        | `.asp`, `.aspx`, `.cer`, `.asa`, `.aspx`, `.cshtml`, `.vbhtml`                                                 | **RCE** via webshell                                      |
+| SSI        | `.shtml`, `.stm`, `.shtm`                                                                                      | **RCE** xap, **Information Disclosure** via SSI Injection |
+| Python     | `.py`                                                                                                          | **RCE** via webshell                                      |
+| Perl       | `.pl`, `.pm`, `.cgi`, `.lib` (note, `.pm` and `.lib` cannot be called directly, but rather invoked as modules) | **RCE** via webshell                                      |
+| Ruby       | `.rb`                                                                                                          | **RCE** via webshell                                      |
+| Shell      | `.sh`                                                                                                          | **RCE** via webshell                                      |
+| Java       | `.jsp`, `.jspx`, `.jsw`, `.jsv`, `.jspf`                                                                       | **RCE** via webshell                                      |
+| Coldfusion | `.cfm`, `.cfml`, `.cfc`, `.dbm` (if IIS is configured right)                                                   | **RCE** via webshell                                      |
 
 ### Configuration
 
@@ -60,37 +60,46 @@ Voici la liste de types de fichiers qui peuvent être intéressants à téléver
 
 ## Archivage
 
-| Type | Extension | Risque                                          |
-| ---- | --------- | ----------------------------------------------- |
-| Zip  | `.zip`    | Information Disclosure via Symlink, RCE via LFI |
-| RAR  | `.rar`    |                                                 |
-| tar  | `.tar`    |                                                 |
-| 7z   | `7z`      |                                                 |
+| Type | Extension | Risque                                                                                                  |
+| ---- | --------- | ------------------------------------------------------------------------------------------------------- |
+| Zip  | `.zip`    | **Information Disclosure** via Symlink, **RCE** via LFI, **Propagation de malware** (Test anti malware) |
+| RAR  | `.rar`    |                                                                                                         |
+| tar  | `.tar`    |                                                                                                         |
+| 7z   | `7z`      |                                                                                                         |
 
-## Images
+## Image
 
-| Type | Extension       | Risque                                 |
-| ---- | --------------- | -------------------------------------- |
-| JPEG | `.jpg`, `.jpeg` |                                        |
-| PNG  | `.png`          |                                        |
-| GIF  | `.gif`          |                                        |
-| SVG  | `.svg`          | XXS, XXE, HTML Injection Open Redirect |
+| Type | Extension       | Risque                                                              |
+| ---- | --------------- | ------------------------------------------------------------------- |
+| JPEG | `.jpg`, `.jpeg` | **RCE** via ImageTragick                                            |
+| PNG  | `.png`          | **RCE** via ImageTragick                                            |
+| GIF  | `.gif`          | **RCE** via ImageTragick                                            |
+| SVG  | `.svg`          | **XXS**, **XXE**, **HTML Injection**, **Open Redirection**, **DoS** |
+| MVG  | `.mvg`          | **RCE** via ImageTragick                                            |
 
 ## Langage de balisage
 
-| Type  | Extension       | Risque                             |
-| ----- | --------------- | ---------------------------------- |
-| HTML  | `.html`, `.htm` | HTML Injection, XSS, Open Redirect |
-| XML   | `.xml`          | XXE, XXS                           |
-| XHTML | `.xhtml`        |                                    |
+| Type  | Extension       | Risque                                            |
+| ----- | --------------- | ------------------------------------------------- |
+| HTML  | `.html`, `.htm` | **XSS**, **HTML Injection**, **Open Redirection** |
+| XML   | `.xml`          | **XXE**, **XXS**, **DoS**                         |
+| XHTML | `.xhtml`        |                                                   |
+
+## Document Office Open XML
+
+| Type                | Extension        | Risque |
+| ------------------- | ---------------- | ------ |
+| Document Word       | `.docx`, `.docm` |        |
+| Document Excel      | `.pptx`, `.pptm` |        |
+| Document PowerPoint | `.xlsx`, `.xlsm` |        |
 
 ### Autres
 
-| Type  | Extension      | Risque                 |
-| ----- | -------------- | ---------------------- |
-| EICAR | `.com`, `.zip` | Propagation de malware |
-|       |                |                        |
-|       |                |                        |
+| Type  | Extension      | Risque                                         |
+| ----- | -------------- | ---------------------------------------------- |
+| EICAR | `.com`, `.zip` | **Propagation de malware** (Test anti malware) |
+|       |                |                                                |
+|       |                |                                                |
 
 ## Todo
 
@@ -111,6 +120,8 @@ to easily exhaust the host resources and consequently produce a DoS.
 - Cross-site content hijacking issues can be exploited by uploading a
   file with allowed name and extension but with Flash, PDF, or
   Silverlight contents.
+- SSRF
+- reverse shell : [Reverse Shell Cheat Sheet | pentestmonkey](http://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet)
 
 ## Annexes
 

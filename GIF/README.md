@@ -14,7 +14,7 @@
 
 ## RCE : ImageTragick CVE-2016–3714
 
-<img src="logo_imagetragick.png" title="" alt="" height="200">
+<img src="logo_imagetragick.png" title="" alt="" height="150">
 
 **ImageMagick** est un logiciel utilisé pour créer, modifier (redimensionner), convertir ou afficher des fichiers d'images dans un très grand nombre de formats.
 

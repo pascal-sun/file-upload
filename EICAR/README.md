@@ -1,6 +1,6 @@
 # Eicar
 
-![](logo.png)
+<img src="logo.png" title="" alt="" height="150">
 
 **Facteur de risque** : Propagation de malware
 
