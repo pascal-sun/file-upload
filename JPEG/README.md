@@ -78,3 +78,4 @@ Comme l'exploitation se passe au moment du téléversement, l'utilisateur peut n
 - Embedding PHP Shell on PNG : https://www.idontplaydarts.com/2012/06/encoding-web-shells-in-png-idat-chunks/
 - Upload .jpg file containing a Flash object - victim experiences Cross-site Content Hijacking.
   - [Even uploading a JPG file can lead to Cross-Site Content Hijacking (client-side attack)! | Soroush Dalili (@irsdl) &#8211; سروش دلیلی](https://soroush.secproject.com/blog/2014/05/even-uploading-a-jpg-file-can-lead-to-cross-domain-data-hijacking-client-side-attack/)
+- [Throwback - Smuggling PHP Shells Inside Images](https://web.archive.org/web/20150222213740/http://rotlogix.com/2014/08/01/throwback-smuggling-php-shells-inside-images/)

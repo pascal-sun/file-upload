@@ -37,3 +37,7 @@ Call oS.Run("win.com cmd.exe /c c:\Inetpub\shell443.exe",0,True)
 - [Webshell &#xB7; Total OSCP Guide](https://sushant747.gitbooks.io/total-oscp-guide/content/webshell.html)
 
 ## Todo
+
+- [PayloadsAllTheThings/Upload Insecure Files/Extension ASP at master · swisskyrepo/PayloadsAllTheThings · GitHub](https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Upload%20Insecure%20Files/Extension%20ASP)
+
+- 

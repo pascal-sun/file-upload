@@ -1,6 +1,6 @@
-# .htaccess
+# Extension of File
 
-**Facteur de risque** : Denial of Service
+**Facteur de risque** : Information Disclosure, LFI, XXE, XSS...
 
 **Extension** : `.zip`
 
@@ -60,10 +60,6 @@ Bla
 
 ## References
 
-[GitHub - wireghoul/htshells: Self contained htaccess shells and attacks](https://github.com/wireghoul/htshells)
-
 ## Todo
 
-- Uploading a file with a reserved name may lead to denial
-  of service if the application keeps the name and tries to save it
-  with another extension (detecting it wrongly as an existing file).
+- [PayloadsAllTheThings/Upload Insecure Files/Extension Flash at master · swisskyrepo/PayloadsAllTheThings · GitHub](https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Upload%20Insecure%20Files/Extension%20Flash)

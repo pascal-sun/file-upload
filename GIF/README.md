@@ -79,3 +79,7 @@ Comme l'exploitation se passe au moment du téléversement, l'utilisateur peut n
 - Beating getimagesize() : [Unrestricted File Upload | OWASP](https://owasp.org/www-community/vulnerabilities/Unrestricted_File_Upload)
 
 - Upload .gif file to be resized - image library flaw exploited
+
+- [GIF/Javascript Polyglots: Abusing GIFs, tags, and MIME types for evil - Web Hacking - 0x00sec - The Home of the Hacker](https://0x00sec.org/t/gif-javascript-polyglots-abusing-gifs-tags-and-mime-types-for-evil/5088)
+
+- [ThinkFu &rsaquo; GIF/Javascript Polyglots](http://web.archive.org/web/20191216134147/http://www.thinkfu.com/blog/gifjavascript-polyglots)

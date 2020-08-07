@@ -52,11 +52,11 @@ Voici la liste de types de fichiers qui peuvent être intéressants à téléver
 
 ### Configuration
 
-| Type   | Extension                 | Risque |
-| ------ | ------------------------- | ------ |
-| Apache | `.htaccess`, `httpd.conf` |        |
-| IIS    | `web.config`              |        |
-| Python | `__init__.py`             |        |
+| Type   | Extension     | Risque                              |
+| ------ | ------------- | ----------------------------------- |
+| Apache | `.htaccess`   | **RCE**, **Information Disclosure** |
+| IIS    | `web.config`  |                                     |
+| Python | `__init__.py` |                                     |
 
 ## Archivage
 
@@ -101,6 +101,16 @@ Voici la liste de types de fichiers qui peuvent être intéressants à téléver
 |       |                |                                                |
 |       |                |                                                |
 
+## Nom de fichiers
+
+| Nom du fichier       | Explication                                                            |
+| -------------------- | ---------------------------------------------------------------------- |
+| `../../../index.php` | Sortir du répertoire de téléchargement, et écraser le fichier original |
+|                      |                                                                        |
+|                      |                                                                        |
+|                      |                                                                        |
+|                      |                                                                        |
+
 ## Todo
 
 Firstly, it uses a path provided by the user. This path is not 
@@ -114,14 +124,16 @@ access to the server.
 Finally, it does not restrict the size of the file. This would allow 
 to easily exhaust the host resources and consequently produce a DoS.
 
-- [virtualabs.fr - Bulletproof JPEGs](https://virtualabs.fr/Nasty-bulletproof-Jpegs-l.html), pour PHP avec LFI
-- Gén;erer des payloads avec metasploit
+- **Picture Resize** [virtualabs.fr - Bulletproof JPEGs](https://virtualabs.fr/Nasty-bulletproof-Jpegs-l.html), pour PHP avec LFI
+- **Picture Metadata**
+- Générer des payloads avec metasploit
 - `.cert` ?
 - Cross-site content hijacking issues can be exploited by uploading a
   file with allowed name and extension but with Flash, PDF, or
   Silverlight contents.
 - SSRF
 - reverse shell : [Reverse Shell Cheat Sheet | pentestmonkey](http://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet)
+- [GitHub - osnr/horrifying-pdf-experiments: Stuff which works in Chrome and maybe Acrobat and Foxit.](https://github.com/osnr/horrifying-pdf-experiments)
 
 ## Annexes
 
@@ -148,3 +160,5 @@ to easily exhaust the host resources and consequently produce a DoS.
 - [GitHub - wireghoul/htshells: Self contained htaccess shells and attacks](https://github.com/wireghoul/htshells)
 
 https://cwe.mitre.org/data/definitions/434.html
+
+[Protection from Unrestricted File Upload Vulnerability | Qualys Security Blog](https://blog.qualys.com/securitylabs/2015/10/22/unrestricted-file-upload-vulnerability)
