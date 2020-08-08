@@ -1,5 +1,7 @@
 # Apache : .htaccess
 
+<img title="" src="logo.png" alt="" height="150">
+
 **Facteur de risque** : RCE, Information Disclosure, DoS
 
 **Nom du fichier** : `.htaccess`
@@ -78,9 +80,7 @@ Les payloads sont nommées de la manière suivante : **module**.**attack**.htacc
 
 ## Todo
 
-- No need to use .htaccess as the shell file, simply do :
-  
-  `AddType application/x-httpd-php .jpg`
-  Then upload your phpshell with a jpg extension which is very likely to be allowed in whitelisted extension.
+- La ligne suivante permet de rendre une image `.jpg` exécutable, en changeant son type MIME : `AddType application/x-httpd-php .jpg`
+  Ensuite, il suffit de téléverser un webshell en PHP par exemple en `.jpg`, qui a beaucoup plus de chance d'être accepté par l'application.
 
 - [l33t-hoster](http://corb3nik.github.io/blog/insomnihack-teaser-2019/l33t-hoster)

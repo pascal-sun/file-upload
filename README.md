@@ -24,7 +24,7 @@ Vous trouvez ici une liste de payload de fichier à téléverser, lors d'une tes
 
 ![](map.png)
 
-Ce **mind map** permet de résumer les attaques possibles selon le type de fichiers autorisées à être téléverser.
+Ce **mind map** résume les attaques possibles selon le type de fichiers autorisées à être téléverser.
 
 ## Présentation
 
@@ -50,7 +50,7 @@ Voici la liste de types de fichiers qui peuvent être intéressants à téléver
 | Java       | `.jsp`, `.jspx`, `.jsw`, `.jsv`, `.jspf`                                                                       | **RCE** via webshell                                      |
 | Coldfusion | `.cfm`, `.cfml`, `.cfc`, `.dbm` (if IIS is configured right)                                                   | **RCE** via webshell                                      |
 
-### Configuration
+### Fichier de Configuration
 
 | Type   | Extension     | Risque                              |
 | ------ | ------------- | ----------------------------------- |
@@ -149,9 +149,11 @@ to easily exhaust the host resources and consequently produce a DoS.
 
 - [File Upload XSS - Brute XSS](https://brutelogic.com.br/blog/file-upload-xss/)
 
-- [GitHub - fuzzdb-project/fuzzdb: Dictionary of attack patterns and primitives for black-box application fault injection and resource discovery.](https://github.com/fuzzdb-project/fuzzdb)
+- [fuzzdb/attack/file-upload at master · fuzzdb-project/fuzzdb · GitHub](https://github.com/fuzzdb-project/fuzzdb/tree/master/attack/file-upload)
 
-- [GitHub - danielmiessler/SecLists: SecLists is the security tester&#39;s companion. It&#39;s a collection of multiple types of lists used during security assessments, collected in one place. List types include usernames, passwords, URLs, sensitive data patterns, fuzzing payloads, web shells, and many more.](https://github.com/danielmiessler/SecLists)
+- [SecLists/Web-Shells at master · danielmiessler/SecLists · GitHub](https://github.com/danielmiessler/SecLists/tree/master/Web-Shells)
+
+- [SecLists/Payloads at master · danielmiessler/SecLists · GitHub](https://github.com/danielmiessler/SecLists/tree/master/Payloads)
 
 - [GitHub - modzero/mod0BurpUploadScanner: HTTP file upload scanner for Burp Proxy](https://github.com/modzero/mod0BurpUploadScanner)
 
@@ -159,6 +161,8 @@ to easily exhaust the host resources and consequently produce a DoS.
 
 - [GitHub - wireghoul/htshells: Self contained htaccess shells and attacks](https://github.com/wireghoul/htshells)
 
-https://cwe.mitre.org/data/definitions/434.html
+Définition du problème de téléversement de fichiers : 
 
-[Protection from Unrestricted File Upload Vulnerability | Qualys Security Blog](https://blog.qualys.com/securitylabs/2015/10/22/unrestricted-file-upload-vulnerability)
+- https://cwe.mitre.org/data/definitions/434.html
+
+- [Protection from Unrestricted File Upload Vulnerability | Qualys Security Blog](https://blog.qualys.com/securitylabs/2015/10/22/unrestricted-file-upload-vulnerability)
