@@ -8,7 +8,9 @@
 
 **Type MIME** : `application/vnd.openxmlformats-officedocument.wordprocessingml.document`, `application/vnd.openxmlformats-officedocument.spreadsheetml.sheet`, `application/vnd.openxmlformats-officedocument.presentationml.presentation`
 
-**Description** : **Office Open XML** (OOXML) est un fromat de fichier **zippé** et basé sur le **XML**, pour représenter des feuilles de calcul, des graphiques, des présentations et des documents de traitement de texte.
+**Description** : **
+
+Office Open XML** (OOXML) est un fromat de fichier **zippé** et basé sur le **XML**, pour représenter des feuilles de calcul, des graphiques, des présentations et des documents de traitement de texte.
 
 ## Sommaire
 

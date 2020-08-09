@@ -6,7 +6,9 @@
 
 **Type MIME** : image/jpeg
 
-**Description** : **Joint Photographic Experts Group** ou **JPG** est un format d'image
+**Description** : 
+
+**Joint Photographic Experts Group** ou **JPG** est un format d'image
 
 ## Sommaire
 

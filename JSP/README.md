@@ -6,7 +6,9 @@
 
 **Type MIME** : `application/zip`
 
-**Description** : Description de l'extension du fichier
+**Description** : 
+
+Description de l'extension du fichier
 
 ## Sommaire
 

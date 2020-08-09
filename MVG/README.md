@@ -6,7 +6,9 @@
 
 **Extensions** : `.mvg`
 
-**Description** : Le **Magick Vector Graphics** ou **MVG** est un langage permettant d'écrire des graphiques vectoriels bidimensionnels pour le logiciel **ImageMagick**. Exemlple :
+**Description** : 
+
+Le **Magick Vector Graphics** ou **MVG** est un langage permettant d'écrire des graphiques vectoriels bidimensionnels pour le logiciel **ImageMagick**. Exemlple :
 
 ```
 push graphic-context

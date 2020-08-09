@@ -8,7 +8,9 @@
 
 **Type MIME** : `image/svg+xml`
 
-**Description** : Le **Scalable Vector Graphics** ou **SVG**, est un format de données conçu pour décrire des ensembles de graphiques vectoriels et basé sur XML. Exemple :
+**Description** : 
+
+Le **Scalable Vector Graphics** ou **SVG**, est un format de données conçu pour décrire des ensembles de graphiques vectoriels et basé sur XML. Exemple :
 
 ```svg
 <?xml version="1.0" standalone="no"?>

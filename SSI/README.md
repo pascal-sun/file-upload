@@ -4,7 +4,9 @@
 
 **Extension** : `.shtml`, `.stm`, `.shtm`
 
-**Description** : Les **Server Side Includes** (SSI) sont un langages de programmation fait pour être interprété par un serveur HTTP. Ils sont surtout utile pour inclure le contenu d'un ou plusieurs fichiers dans une page web sur un serveur web, en utilisant `#include`.
+**Description** : 
+
+Les **Server Side Includes** (SSI) sont un langages de programmation fait pour être interprété par un serveur HTTP. Ils sont surtout utile pour inclure le contenu d'un ou plusieurs fichiers dans une page web sur un serveur web, en utilisant `#include`.
 
 ## Sommaire
 

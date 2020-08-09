@@ -6,7 +6,9 @@
 
 **Type MIME** : application/xml, text/xml
 
-**Description** : L'**Extensible Markup Language** ou **XML** est un langage de balisage, permettant l'échange de contenus complexes.
+**Description** : 
+
+L'**Extensible Markup Language** ou **XML** est un langage de balisage, permettant l'échange de contenus complexes.
 
 ## Sommaire
 

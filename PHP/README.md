@@ -6,7 +6,9 @@
 
 **Extension** : `.php`, `.php3`, `.php4`, `.php5`, `.php7`, `.phar`, `.phps`, `php-s`, `.phpt`, `.pht`, `.phtm`, `.phtml`, `.inc`
 
-**Description** : **PHP: Hypertext Preprocessor**, plus connu sous son sigle **PHP**, est un "langage de programmation" libre, principalement utilisé pour produire des pages Web dynamiques via un serveur HTTP (*Apache, lighttpd, nginx...*).
+**Description** : 
+
+**PHP: Hypertext Preprocessor**, plus connu sous son sigle **PHP**, est un "langage de programmation" libre, principalement utilisé pour produire des pages Web dynamiques via un serveur HTTP (*Apache, lighttpd, nginx...*).
 
 ## Sommaire
 

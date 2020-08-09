@@ -6,7 +6,9 @@
 
 **Type MIME** : `image/gif`
 
-**Description** : Le **Graphics Interchange Format** ou **GIF**, est un format d'image.
+**Description** : 
+
+Le **Graphics Interchange Format** ou **GIF**, est un format d'image.
 
 ## Sommaire
 

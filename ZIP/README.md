@@ -6,7 +6,9 @@
 
 **Type MIME** : application/zip
 
-**Description** : Le **ZIP** est un format de fichier permettant l'archivage *(utilisation d'un seul fichier pour stocker plusieurs fichiers)* et la compression de données *(diminution de l'espace occupé sur le support numérique)* sans perte de qualité.
+**Description** : 
+
+Le **ZIP** est un format de fichier permettant l'archivage *(utilisation d'un seul fichier pour stocker plusieurs fichiers)* et la compression de données *(diminution de l'espace occupé sur le support numérique)* sans perte de qualité.
 
 Si un fichier ZIP téléversé est **décompressé** ensuite par le serveur, plusieurs attaques peuvent être effectué.
 

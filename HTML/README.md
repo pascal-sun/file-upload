@@ -8,7 +8,9 @@
 
 **Type MIME** : `text/html`
 
-**Description** : Le **H**yper**T**ext **M**arkup **L**anguage (**HTML** ou **HTML5**) est un langage de balisage conçu pour représenter les pages web.
+**Description** : 
+
+Le **H**yper**T**ext **M**arkup **L**anguage (**HTML** ou **HTML5**) est un langage de balisage conçu pour représenter les pages web.
 
 ## Sommaire
 

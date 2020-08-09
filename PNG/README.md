@@ -6,7 +6,9 @@
 
 **Type MIME** : image/png
 
-**Description** : Le **Portable Network Graphics** ou **PNG**, est un format ouvert d'images. C'est un fromat sans perte.
+**Description** : 
+
+Le **Portable Network Graphics** ou **PNG**, est un format ouvert d'images. C'est un fromat sans perte.
 
 ## Sommaire
 
