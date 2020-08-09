@@ -55,7 +55,7 @@ Voici la liste de types de fichiers qui peuvent être intéressants à téléver
 | Type   | Extension     | Risque                              |
 | ------ | ------------- | ----------------------------------- |
 | Apache | `.htaccess`   | **RCE**, **Information Disclosure** |
-| IIS    | `web.config`  |                                     |
+| IIS    | `web.config`  | **RCE** via ASP webshell, **XSS**   |
 | Python | `__init__.py` |                                     |
 
 ## Archivage
