@@ -1,22 +1,10 @@
-# Catalogue de fichiers pour File Upload
+<img title="" src="logo-file-upload.svg" alt="" height="150" data-align="center">
 
-De nombreux applications permettent le téléversement/téléchargement de données/informations. Mais l'acceptation de fichiers peut présenter des risques. Pour réduire ce risque, nous pouvons n'accepter que certaines extensions de fichiers, mais les attaquants sont capables d'encapsuler un code malveillant dans des types de fichiers neutres d'apparences.
+# Payloads destinés au téléversement de fichier
 
-Les tests de détection des fichiers malveillant vérifient que l'application est capable de protéger correctement contre les attaquants qui téléversent des fichiers malveillants.
+De nombreux applications permettent le téléversement/téléchargement de données/informations. Mais l'acceptation de fichiers peut présenter des risques. 
 
-La fonctionnalité de **File Upload** peut représenter un risque pour une application si elle n'est pas implémentée correctement. 
 
-Selon ce que fait l'application du fichier, les conséquences d'un téléversement de fichiers non sûrs sont nombreuses :
-
-- contrôle complète du système,
-
-- déni de service,
-
-- attaque côté client (XSS, XXE, etc) ou serveur (SSRF, etc),
-
-- défiguration du site,
-
-- etc.
 
 Vous trouvez ici une liste de payload de fichier à téléverser, lors d'une test d'intrusion par exemple, et ainsi démontrer l'existence de la faille (*POC*).
 
