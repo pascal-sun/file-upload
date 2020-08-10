@@ -1,4 +1,6 @@
-<img title="" src="logo-file-upload.svg" alt="" height="150" data-align="center">
+<p align="center">
+  <img title="" src="logo-file-upload.svg" alt="" height="150">
+</p>
 
 # Payloads destinés au téléversement de fichier
 
