@@ -75,11 +75,11 @@ Voici la liste de types de fichiers qui peuvent être intéressants à téléver
 
 ## Document Office Open XML
 
-| Type                | Extension        | Risque |
-| ------------------- | ---------------- | ------ |
-| Document Word       | `.docx`, `.docm` |        |
-| Document Excel      | `.pptx`, `.pptm` |        |
-| Document PowerPoint | `.xlsx`, `.xlsm` |        |
+| Type                | Extension        | Risque  |
+| ------------------- | ---------------- | ------- |
+| Document Word       | `.docx`, `.docm` | **XXE** |
+| Document Excel      | `.pptx`, `.pptm` | **XXE** |
+| Document PowerPoint | `.xlsx`, `.xlsm` | **XXE** |
 
 ### Autres
 
