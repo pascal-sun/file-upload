@@ -31,20 +31,20 @@ Voici la liste de types de fichiers qui peuvent être intéressants à téléver
 | PHP        | `.php`, `.php3`, `.php4`, `.php5`, `.php7`, `.phar`, `.phps`, `.phpt`, `.pht`, `.phtm`, `.phtml`               | **RCE** via webshell, **Information Disclosure**          |
 | ASP        | `.asp`, `.aspx`, `.cer`, `.asa`, `.aspx`, `.cshtml`, `.vbhtml`                                                 | **RCE** via webshell                                      |
 | SSI        | `.shtml`, `.stm`, `.shtm`                                                                                      | **RCE** xap, **Information Disclosure** via SSI Injection |
-| Python     | `.py`                                                                                                          | **RCE** via webshell                                      |
+| ~~Python~~ | ~~`.py`~~                                                                                                      | ~~**RCE** via webshell~~                                  |
 | Perl       | `.pl`, `.pm`, `.cgi`, `.lib` (note, `.pm` and `.lib` cannot be called directly, but rather invoked as modules) | **RCE** via webshell                                      |
-| Ruby       | `.rb`                                                                                                          | **RCE** via webshell                                      |
-| Shell      | `.sh`                                                                                                          | **RCE** via webshell                                      |
+| ~~Ruby~~   | ~~`.rb`~~                                                                                                      | ~~**RCE** via webshell~~                                  |
+| ~~Shell~~  | ~~`.sh`~~                                                                                                      | ~~**RCE** via webshell~~                                  |
 | Java       | `.jsp`, `.jspx`, `.jsw`, `.jsv`, `.jspf`                                                                       | **RCE** via webshell                                      |
 | Coldfusion | `.cfm`, `.cfml`, `.cfc`, `.dbm` (if IIS is configured right)                                                   | **RCE** via webshell                                      |
 
 ### Fichier de Configuration
 
-| Type   | Extension     | Risque                              |
-| ------ | ------------- | ----------------------------------- |
-| Apache | `.htaccess`   | **RCE**, **Information Disclosure** |
-| IIS    | `web.config`  | **RCE** via ASP webshell, **XSS**   |
-| Python | `__init__.py` |                                     |
+| Type       | Extension         | Risque                              |
+| ---------- | ----------------- | ----------------------------------- |
+| Apache     | `.htaccess`       | **RCE**, **Information Disclosure** |
+| IIS        | `web.config`      | **RCE** via ASP webshell, **XSS**   |
+| ~~Python~~ | ~~`__init__.py`~~ |                                     |
 
 ## Archivage
 
@@ -73,31 +73,36 @@ Voici la liste de types de fichiers qui peuvent être intéressants à téléver
 | XML   | `.xml`          | **XXE**, **XXS**, **DoS**                         |
 | XHTML | `.xhtml`        |                                                   |
 
-## Document Office Open XML
+## Document XML
 
-| Type                | Extension        | Risque  |
-| ------------------- | ---------------- | ------- |
-| Document Word       | `.docx`, `.docm` | **XXE** |
-| Document Excel      | `.pptx`, `.pptm` | **XXE** |
-| Document PowerPoint | `.xlsx`, `.xlsm` | **XXE** |
+### Document Office Open XML (OOXML)
+
+| Type                | Extension        | Risque             |
+| ------------------- | ---------------- | ------------------ |
+| Document Word       | `.docx`, `.docm` | **XXE**, **XSS**   |
+| Document PowerPoint | `.pptx`, `.pptm` | **XXE****, **XSS** |
+| Document Excel      | `.xlsx`, `.xlsm` | **XXE****, **XSS** |
+
+### Open Document Format (ODF)
+
+| Type         | Extension       | Risque           |
+| ------------ | --------------- | ---------------- |
+| Text         | `.odt`, `.fodt` | **XXE**, **XSS** |
+| Presentation | `.odp`, `.fodp` | **XXE**, **XSS** |
+| Spreadsheet  | `.ods`, `.fods` | **XXE**, **XSS** |
+| Graphics     | `.odg`, `fodg`  | **XXE**, **XSS** |
 
 ### Autres
 
 | Type  | Extension      | Risque                                         |
 | ----- | -------------- | ---------------------------------------------- |
 | EICAR | `.com`, `.zip` | **Propagation de malware** (Test anti malware) |
-|       |                |                                                |
-|       |                |                                                |
 
 ## Nom de fichiers
 
 | Nom du fichier       | Explication                                                            |
 | -------------------- | ---------------------------------------------------------------------- |
 | `../../../index.php` | Sortir du répertoire de téléchargement, et écraser le fichier original |
-|                      |                                                                        |
-|                      |                                                                        |
-|                      |                                                                        |
-|                      |                                                                        |
 
 ## Todo
 
