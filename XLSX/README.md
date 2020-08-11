@@ -2,7 +2,7 @@
 
 <img src="logo.png" title="" alt="" height="150">
 
-**Facteur de risque** : Information Disclosure, LFI, XXE, XSS...
+**Facteur de risque** : XXE
 
 **Extension** : `.xlsx`, `xlsm`
 
@@ -14,7 +14,11 @@
 
 `.xlsx` est une extension de nom de fichier pour tableur au format Office Open XML. `.xlsm` permet en plus l'utilisation des **macros**.
 
-Un fichier `.xlsx` peut être désarchiver comme un fichier `.zip`. Il contient notamment plusieurs fichiers `.xml`, dont :
+Un fichier `.xlsx` peut être désarchiver comme un fichier `.zip`. Il contient notamment plusieurs fichiers `.xml`. Microsoft conseille d'analyser dans l'ordre :
+
+- le fichier `_rels/.rels`, qui contient les relations en reliant un ID à chaque fichier
+
+- le fichier `[Content_Types].xml` qui contient une liste de type MIME
 
 - le fichier `xl/workbook.xml`, qui donne une vue d'ensemble du contenu du classeur (nom des feuilles, etc.). La plupart du temps, les applications web analysent ce fichier en premier,
 
@@ -68,7 +72,7 @@ Créez un nouveau fichier Excel ou Google Sheets vide, puis enregistrez le fichi
    
    Ici, si le parser de l'application est vulnérable au XXE, il va se connecter via HTTP au serveur web 192.168.1.1 sur le port 8000, en demandant le fichier `XXE`.
 
-3. Archivez à nouveau le fichier `.xlsv`, puis téléversez-le. Office n'ouvrit pas ces fichiers. Mais les fichiers sont correctes et restent valident.
+3. Archivez à nouveau le fichier `.xlsv`, puis téléversez-le. (Il faut savoir que le fichier est techniquement correct d'après les spécifications, mais Office n'ouvrira pas le fichier). 
    
    ```shell
    zip -r xxe.xlsx FichierMalveillant/*
@@ -79,20 +83,6 @@ Créez un nouveau fichier Excel ou Google Sheets vide, puis enregistrez le fichi
    ```shell
    zip -u xxe.xlsx xl/sharedStrings.xml
    ```
-
-## Payload 3
-
-### Pré-requis
-
-- Pré-requis 1
-
-- Pré-requis 2
-
-### Attaque
-
-Blabla
-
-Bla
 
 ## References
 
@@ -112,19 +102,4 @@ Bla
 
 - an Excel file with a dangerous formula
 
-## XXE inside DOCX file
-
-Format of an Open XML file (inject the payload in any .xml file):
-
-```
-/_rels/.rels
-[Content_Types].xml
-Default Main Document Part
-    /word/document.xml
-    /ppt/presentation.xml
-    /xl/workbook.xml
-```
-
-Then update the file zip -u xxe.docx [Content_Types].xml
-
-Tool : [GitHub - BuffaloWill/oxml_xxe: A tool for embedding XXE/XML exploits into different filetypes](https://github.com/BuffaloWill/oxml_x
+- Ajouter pour les formats SVG, Libre Office ou Open Office (`word/document.xml` -> `content.xml`), et SVG à l'internieur de LIbre ou Open
