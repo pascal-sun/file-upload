@@ -1,28 +1,30 @@
-# Office Open XML Document
+# Office Open XML Presentation
 
 <img src="logo.png" title="" alt="" height="150">
 
-**Facteur de risque** : XXE
+**Facteur de risque** : XXE, XSS
 
-**Extension** : `.docx`, `docm`
+**Extension** : `.pptx`, `pptm`
 
-**Type MIME** : `application/vnd.openxmlformats-officedocument.wordprocessingml.document`
+**Type MIME** : `application/vnd.openxmlformats-officedocument.presentationml.  presentation`
 
 **Description** : 
 
 **Office Open XML** (OOXML) est un format de fichier **zippé** et basé sur le **XML**, pour représenter des feuilles de calcul, des graphiques, des présentations et des documents de traitement de texte. 
 
-`.docx` est une extension de nom de fichier pour traitement de texte au format Office Open XML. `.docm` permet en plus l'utilisation des **macros**.
+`.pptx` est une extension de nom de fichier pour pŕesentation au format Office Open XML. `.pptm` permet en plus l'utilisation des **macros**.
 
-Un fichier `.docx` peut être désarchiver comme un fichier `.zip`. Il contient notamment plusieurs fichiers `.xml`. Microsoft conseille d'analyser dans l'ordre :
+Un fichier `.pptx` peut être désarchiver comme un fichier `.zip`. Il contient notamment plusieurs fichiers `.xml`. Microsoft conseille d'analyser dans l'ordre :
 
 - le fichier `_rels/.rels`, qui contient les relations en reliant un ID à chaque fichier
 
 - le fichier `[Content_Types].xml` qui contient une liste de type MIME
 
-- le fichier `word/document.xml`, qui donne une vue d'ensemble du contenu du classeur (nom des feuilles, etc.). La plupart du temps, les applications web analysent ce fichier en premier.
+- le fichier `ppt/presentation.xml`, qui donne une vue d'ensemble du contenu des slides. La plupart du temps, les applications web analysent ce fichier en premier,
 
-Un fichier Word ou un fichier Google Docs en `.docx` correspond donc en réalité à un fichier archive `.zip` contenant plusieurs fichiers `.xml`. Des payloads pour XXE peuvent être donc injectés dans les fichiers.
+- et les fichiers `ppt/slides/slide1.xml`, `ppt/slides/slide2.xml`... correspondent aux différents slides avec leurs données.
+
+Un fichier PowerPoint ou un fichier Google Slides en `.docx` correspond donc en réalité à un fichier archive `.zip` contenant plusieurs fichiers `.xml`. Des payloads pour XXE peuvent être donc injectés dans les fichiers.
 
 ## Sommaire
 
@@ -37,7 +39,7 @@ Un fichier Word ou un fichier Google Docs en `.docx` correspond donc en réalit�
 
 ### Exploitation
 
-Créez un nouveau fichier Word ou Google Docss vide, puis enregistrez le fichier au format `.docx` (**xxe.xlsx**)
+Créez un nouveau fichier Word ou Google Docs vide, puis enregistrez le fichier au format `.docx` (**xxe.xlsx**)
 
 1. Déarchivez le fichier `.docx` dans un répertoire (**FichierMalveillant**) :
    
@@ -72,7 +74,8 @@ Créez un nouveau fichier Word ou Google Docss vide, puis enregistrez le fichier
 - Exploiting XXE Vulnerabilities In File Parsing Functionality - YouTube : https://www.youtube.com/watch?v=LZUlw8hHp44
 - Black Hat | WebCast: Exploiting XML Entity Vulnerabilities in File Parsing Functionality : https://www.blackhat.com/html/webcast/11192015-exploiting-xml-entity-vulnerabilities-in-file-parsing-functionality.html
 - GitHub - BuffaloWill/oxml_xxe: A tool for embedding XXE/XML exploits into different filetypes : https://github.com/BuffaloWill/oxml_xxe
-- GitHub - whitel1st/docem: Uility to embed XXE and XSS payloads in docx,odt,pptx,etc (OXML_XEE on steroids : https://github.com/whitel1st/docem
+- GitHub - whitel1st/docem: Uility to embed XXE and XSS payloads in docx,odt,pptx,etc (OXML_XEE on steroids) : https://github.com/whitel1st/docem
+- [HackerOne](https://hackerone.com/reports/334488)
 
 ## Todo
 

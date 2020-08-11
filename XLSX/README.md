@@ -89,6 +89,7 @@ Créez un nouveau fichier Excel ou Google Sheets vide, puis enregistrez le fichi
 - Exploiting XXE Vulnerabilities In File Parsing Functionality - YouTube : https://www.youtube.com/watch?v=LZUlw8hHp44
 - Black Hat | WebCast: Exploiting XML Entity Vulnerabilities in File Parsing Functionality : https://www.blackhat.com/html/webcast/11192015-exploiting-xml-entity-vulnerabilities-in-file-parsing-functionality.html
 - GitHub - BuffaloWill/oxml_xxe: A tool for embedding XXE/XML exploits into different filetypes : https://github.com/BuffaloWill/oxml_xxe
+- GitHub - whitel1st/docem: Uility to embed XXE and XSS payloads in docx,odt,pptx,etc (OXML_XEE on steroids) : https://github.com/whitel1st/docem
 - Exploiting XXE with Excel : https://www.4armed.com/blog/exploiting-xxe-with-excel/
 - XXE injection is possible via specially crafted excel file : https://github.com/jmcnamara/excel-reader-xlsx/issues/10
 - XXE at Bol.com : https://medium.com/@jonathanbouman/xxe-at-bol-com-7d331186de54]
@@ -103,3 +104,5 @@ Créez un nouveau fichier Excel ou Google Sheets vide, puis enregistrez le fichi
 - an Excel file with a dangerous formula
 
 - Ajouter pour les formats SVG, Libre Office ou Open Office (`word/document.xml` -> `content.xml`), et SVG à l'internieur de LIbre ou Open
+
+- XSS
