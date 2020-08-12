@@ -46,7 +46,7 @@ Voici la liste de types de fichiers qui peuvent être intéressants à téléver
 | IIS        | `web.config`      | **RCE** via ASP webshell, **XSS**   |
 | ~~Python~~ | ~~`__init__.py`~~ |                                     |
 
-## Archivage
+### Archivage
 
 | Type | Extension | Risque                                                                                                  |
 | ---- | --------- | ------------------------------------------------------------------------------------------------------- |
@@ -55,7 +55,7 @@ Voici la liste de types de fichiers qui peuvent être intéressants à téléver
 | tar  | `.tar`    |                                                                                                         |
 | 7z   | `7z`      |                                                                                                         |
 
-## Image
+### Image
 
 | Type | Extension       | Risque                                                              |
 | ---- | --------------- | ------------------------------------------------------------------- |
@@ -65,7 +65,7 @@ Voici la liste de types de fichiers qui peuvent être intéressants à téléver
 | SVG  | `.svg`          | **XXS**, **XXE**, **HTML Injection**, **Open Redirection**, **DoS** |
 | MVG  | `.mvg`          | **RCE** via ImageTragick                                            |
 
-## Langage de balisage
+### Langage de balisage
 
 | Type  | Extension       | Risque                                            |
 | ----- | --------------- | ------------------------------------------------- |
@@ -73,17 +73,17 @@ Voici la liste de types de fichiers qui peuvent être intéressants à téléver
 | XML   | `.xml`          | **XXE**, **XXS**, **DoS**                         |
 | XHTML | `.xhtml`        |                                                   |
 
-## Document XML
+### Document XML
 
-### Document Office Open XML (OOXML)
+#### Document Office Open XML (OOXML)
 
 | Type                | Extension        | Risque             |
 | ------------------- | ---------------- | ------------------ |
 | Document Word       | `.docx`, `.docm` | **XXE**, **XSS**   |
-| Document PowerPoint | `.pptx`, `.pptm` | **XXE****, **XSS** |
-| Document Excel      | `.xlsx`, `.xlsm` | **XXE****, **XSS** |
+| Document PowerPoint | `.pptx`, `.pptm` | **XXE**, **XSS** |
+| Document Excel      | `.xlsx`, `.xlsm` | **XXE**, **XSS** |
 
-### Open Document Format (ODF)
+#### Open Document Format (ODF)
 
 | Type         | Extension       | Risque           |
 | ------------ | --------------- | ---------------- |
