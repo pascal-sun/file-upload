@@ -2,6 +2,21 @@
   <img title="" src="logo-file-upload.svg" alt="" height="150">
 </p>
 
+> **Note**
+> This is a note
+
+> **Warning**
+> This is a warning
+
+> [!NOTE]  
+> Highlights information that users should take into account, even when skimming.
+
+> [!IMPORTANT]  
+> Crucial information necessary for users to succeed.
+
+> [!WARNING]  
+> Critical content demanding immediate user attention due to potential risks.
+
 # Payloads destinés au téléversement de fichier
 
 De nombreux applications permettent le téléversement/téléchargement de données/informations. Mais l'acceptation de fichiers peut présenter des risques. 
